@@ -1,4 +1,4 @@
-import { checkAuth, logout } from '../fetch-utils.js';
+import { checkAuth, logout, createParticipant } from '../fetch-utils.js';
 
 const participantForm = document.querySelector('#participant-form');
 const addButton = document.querySelector('#add-participant');

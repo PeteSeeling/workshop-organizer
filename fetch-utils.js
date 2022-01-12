@@ -1,7 +1,23 @@
-const SUPABASE_URL = 'https://osvbnemrpkxnsdboazbe.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzOTUwODkwMywiZXhwIjoxOTU1MDg0OTAzfQ.WbfpkieH6xyID6pt237Vr_Y78Fs1wnkmUdHXoHg5twU';
+const SUPABASE_URL = 'https://xvskqeazeyskzjbmnmpj.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MTk0NjgxMCwiZXhwIjoxOTU3NTIyODEwfQ.R8bDE7dD6-sNKGhQ2eNIPQitA4FgOhtiZkgFZVwAU7U';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+
+export async function createParticipant(participant) {
+    const response = await client
+        .from('participants')
+        .insert(participant);
+
+    return checkError(response);
+}
+
+
+
+
+
+
+
 
 export async function getUser() {
     return client.auth.session();
