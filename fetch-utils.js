@@ -12,6 +12,18 @@ export async function createParticipant(participant) {
     return checkError(response);
 }
 
+export async function deleteParticipant(participantId) {
+    const response = await client 
+        .from('participants')
+        .delete()
+        .match({ id: participantId })
+        .single();
+
+    return checkError(response);
+}
+
+export async
+
 
 
 

@@ -24,6 +24,8 @@ participantForm.addEventListener('submit', async(e) =>{
 });
 
 
+
+
 logoutButton.addEventListener('click', () => {
     logout();
 });
