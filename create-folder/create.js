@@ -1,8 +1,8 @@
-import { checkAuth, logout, createParticipant } from '../fetch-utils.js';
+import { checkAuth, logout, createParticipant, getWorkshops } from '../fetch-utils.js';
 
 const participantForm = document.querySelector('#participant-form');
 const addButton = document.querySelector('#add-participant');
-const dropdown = document.querySelector('workshop-id');
+
 const logoutButton = document.getElementById('logout');
 
 //checkAuth();
@@ -23,7 +23,26 @@ participantForm.addEventListener('submit', async(e) =>{
 
 });
 
+window.addEventListener('load', async() =>{
+    const dropdown = document.querySelector('workshop-id');
 
+    const workshops = await getWorkshops();
+
+    for (let workshop of workshops) {
+        const selectEl = document.createElement('select');
+
+        selectEl.value = workshop.id;
+        selectEl.textContent = workshop.name;
+
+        dropdown.append(selectEl);
+
+
+
+
+    }
+
+
+});
 
 
 logoutButton.addEventListener('click', () => {

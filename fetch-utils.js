@@ -22,7 +22,13 @@ export async function deleteParticipant(participantId) {
     return checkError(response);
 }
 
-export async
+export async function getWorkshops() {
+    const response = await client
+        .from('participants')
+        .select(`*, workshop_id (*)`);
+
+    return checkError(response);
+}
 
 
 
