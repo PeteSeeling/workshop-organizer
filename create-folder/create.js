@@ -25,13 +25,13 @@ participantForm.addEventListener('submit', async(e) =>{
 });
 
 window.addEventListener('load', async() =>{
-    const dropdown = document.querySelector('#workshop-id');
+    const dropdown = document.querySelector('.workshop-id');
 
     const workshops = await getWorkshops();
 
     for (let workshop of workshops) {
-        const selectEl = document.createElement('select');
-
+        const selectEl = document.createElement('option');
+        console.log(workshop)
         selectEl.value = workshop.id;
         selectEl.textContent = workshop.name;
 

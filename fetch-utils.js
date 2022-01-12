@@ -24,8 +24,8 @@ export async function deleteParticipant(participantId) {
 
 export async function getWorkshops() {
     const response = await client
-        .from('participants')
-        .select(`*, workshop_id (*)`);
+        .from('workshops')
+        .select('*');
 
     return checkError(response);
 }
