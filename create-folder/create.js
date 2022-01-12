@@ -24,7 +24,7 @@ participantForm.addEventListener('submit', async(e) =>{
 });
 
 window.addEventListener('load', async() =>{
-    const dropdown = document.querySelector('workshop-id');
+    const dropdown = document.querySelector('#workshop-id');
 
     const workshops = await getWorkshops();
 
