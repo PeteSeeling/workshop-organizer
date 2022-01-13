@@ -1,6 +1,6 @@
 import { checkAuth, logout, deleteParticipant, getWorkshops } from '../fetch-utils.js';
 
-// checkAuth();
+checkAuth();
 
 const logoutButton = document.getElementById('logout');
 const workshopsEl = document.getElementById('workshops');
