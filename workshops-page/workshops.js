@@ -4,6 +4,8 @@ import { checkAuth, logout, deleteParticipant, getWorkshops } from '../fetch-uti
 
 const logoutButton = document.getElementById('logout');
 const workshopsEl = document.getElementById('workshops');
+const createButton = document.getElementById('go-create');
+
 
 window.addEventListener('load', async()=> {
     displayWorkshops(); 
@@ -46,6 +48,9 @@ async function displayWorkshops(){
     }
 
 }
+createButton.addEventListener('click', () =>{
+    window.location.href = '../create-folder';
+});
 
 logoutButton.addEventListener('click', () => {
     logout();

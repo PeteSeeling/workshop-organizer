@@ -2,7 +2,7 @@ import { checkAuth, logout, createParticipant, getWorkshops } from '../fetch-uti
 
 const participantForm = document.querySelector('#participant-form');
 const addButton = document.querySelector('#add-participant');
-
+const workshopButton = document.getElementById('go-workshops');
 const logoutButton = document.getElementById('logout');
 
 //checkAuth();
@@ -14,6 +14,7 @@ participantForm.addEventListener('submit', async(e) =>{
     const data = new FormData(participantForm);
     const name = data.get('participant-name');
     const workshop_id = data.get('workshop-id');
+  
 
     await createParticipant({
         name:name,
@@ -38,7 +39,9 @@ window.addEventListener('load', async() =>{
         dropdown.append(selectEl);
     }
 });
-
+workshopButton.addEventListener('click', () =>{
+    window.location.href = '../workshops-page/';
+});
 
 logoutButton.addEventListener('click', () => {
     logout();

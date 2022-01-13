@@ -33,12 +33,6 @@ export async function getWorkshops() {
 }
 
 
-
-
-
-
-
-
 export async function getUser() {
     return client.auth.session();
 }
@@ -52,7 +46,7 @@ export async function checkAuth() {
 
 export async function redirectIfLoggedIn() {
     if (await getUser()) {
-        location.replace('./other-page');
+        location.replace('./workshops-page');
     }
 }
 
