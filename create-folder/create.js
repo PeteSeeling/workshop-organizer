@@ -19,7 +19,7 @@ participantForm.addEventListener('submit', async(e) =>{
         name:name,
         workshop_id:workshop_id
     });
-    // window.location.href = '../workshops-page';
+ 
     participantForm.reset();
 
 });
@@ -31,7 +31,7 @@ window.addEventListener('load', async() =>{
 
     for (let workshop of workshops) {
         const selectEl = document.createElement('option');
-        console.log(workshop)
+    
         selectEl.value = workshop.id;
         selectEl.textContent = workshop.name;
 
