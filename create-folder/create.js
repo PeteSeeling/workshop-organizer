@@ -4,7 +4,7 @@ const participantForm = document.querySelector('#participant-form');
 const workshopButton = document.getElementById('go-workshops');
 const logoutButton = document.getElementById('logout');
 
-//checkAuth();
+checkAuth();
 
 
 participantForm.addEventListener('submit', async(e) =>{
