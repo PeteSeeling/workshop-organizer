@@ -1,7 +1,6 @@
 import { checkAuth, logout, createParticipant, getWorkshops } from '../fetch-utils.js';
 
 const participantForm = document.querySelector('#participant-form');
-const addButton = document.querySelector('#add-participant');
 const workshopButton = document.getElementById('go-workshops');
 const logoutButton = document.getElementById('logout');
 

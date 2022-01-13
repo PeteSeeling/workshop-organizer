@@ -55,3 +55,4 @@ createButton.addEventListener('click', () =>{
 logoutButton.addEventListener('click', () => {
     logout();
 });
+
