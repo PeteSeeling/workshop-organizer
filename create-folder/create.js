@@ -13,7 +13,7 @@ participantForm.addEventListener('submit', async(e) =>{
 
     const data = new FormData(participantForm);
     const name = data.get('participant-name');
-    const workshop_id = data.get('workshop_id');
+    const workshop_id = data.get('workshop-id');
 
     await createParticipant({
         name:name,

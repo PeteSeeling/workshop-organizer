@@ -3,15 +3,17 @@ import { checkAuth, logout, deleteParticipant, getWorkshops } from '../fetch-uti
 // checkAuth();
 
 const logoutButton = document.getElementById('logout');
-const worshopsEl = document.getElementById('workshops');
+const workshopsEl = document.getElementById('workshops');
 
 window.addEventListener('load', async()=> {
     displayWorkshops(); 
 });
-    
+
 async function displayWorkshops(){
+
+    workshopsEl.textContent = '';
     const workshopList = await getWorkshops();
-    
+    console.log(workshopList);
     
     for (let workshop of workshopList) {
         
@@ -28,19 +30,19 @@ async function displayWorkshops(){
             const participantEl = document.createElement('p');
              
             participantEl.classList.add('participant');
-                // participantEl.textContent = participant.name;
+            participantEl.textContent = participant.name;
 
             participantEl.addEventListener('click', async() =>{
                 await deleteParticipant(participant.id);
 
-                displayWorkshops();
+                await displayWorkshops();
             });
            
            
             participantsEl.append(participantEl);
             
         }
-        worshopsEl.append(workshopEl);
+        workshopsEl.append(workshopEl);
     }
 
 }
