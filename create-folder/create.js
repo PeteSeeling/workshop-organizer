@@ -19,7 +19,7 @@ participantForm.addEventListener('submit', async(e) =>{
         name:name,
         workshop_id:workshop_id
     });
-    window.location.href = '../workshops-page';
+    // window.location.href = '../workshops-page';
     participantForm.reset();
 
 });
